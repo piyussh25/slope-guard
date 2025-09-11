@@ -17,15 +17,15 @@ import {
 const Team = () => {
   const teamMembers = [
     {
-      name: "Piyush Sharma",
-      role: "Team Lead & AI Engineer",
+      name: "Piyush",
+      role: "Team Leader",
       expertise: "Machine Learning, Computer Vision",
       description: "Specializes in developing AI models for predictive analysis and computer vision applications in mining safety.",
       icon: Brain,
       color: "text-primary"
     },
     {
-      name: "Agrim Gupta", 
+      name: "Agrim Rai", 
       role: "Backend Developer",
       expertise: "System Architecture, APIs",
       description: "Expert in building scalable backend systems and real-time data processing pipelines for mining operations.",
@@ -33,7 +33,7 @@ const Team = () => {
       color: "text-info"
     },
     {
-      name: "Akash Kumar",
+      name: "Akash verma",
       role: "Full Stack Developer", 
       expertise: "React, Node.js, DevOps",
       description: "Focuses on creating responsive web applications and managing cloud infrastructure for mining safety systems.",
@@ -41,7 +41,7 @@ const Team = () => {
       color: "text-success"
     },
     {
-      name: "Roshni Patel",
+      name: "Roshni khatri",
       role: "Data Scientist",
       expertise: "Data Analysis, Geotechnical Modeling",
       description: "Specializes in analyzing geological and sensor data to improve rockfall prediction accuracy.",
@@ -49,7 +49,7 @@ const Team = () => {
       color: "text-warning"
     },
     {
-      name: "Aikansh Singh",
+      name: "Aikansh ",
       role: "Frontend Developer",
       expertise: "UI/UX, React, Animations",
       description: "Creates intuitive user interfaces and engaging visual experiences for mining safety dashboards.",
@@ -57,7 +57,7 @@ const Team = () => {
       color: "text-accent"
     },
     {
-      name: "Mohit Verma",
+      name: "Mohit Sharma",
       role: "Security Engineer",
       expertise: "Cybersecurity, Safety Protocols", 
       description: "Ensures the security and reliability of mining safety systems and data protection protocols.",
