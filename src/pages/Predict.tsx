@@ -30,8 +30,6 @@ const Predict = () => {
 
   const [formData, setFormData] = useState({
     location: "",
-    demFile: null as File | null,
-    droneImages: null as FileList | null,
     temperature: "",
     rainfall: "",
     vibrations: "",
@@ -79,11 +77,9 @@ const Predict = () => {
   };
 
   const analysisSteps = [
-    "Processing Digital Elevation Model...",
-    "Analyzing drone imagery data...",
     "Evaluating sensor readings...",
     "Calculating environmental factors...",
-    "Running AI prediction models...",
+    "Running prediction models...",
     "Generating risk assessment...",
     "Preparing safety recommendations...",
     "Finalizing report..."
@@ -125,7 +121,7 @@ const Predict = () => {
               </div>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                {["DEM Analysis", "Image Processing", "Sensor Data", "Risk Calculation"].map((item, index) => (
+                {["Sensor Data", "Environment", "Model Run", "Risk Calculation"].map((item, index) => (
                   <div key={index} className="text-center p-4 bg-card/50 rounded-lg">
                     <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full mb-2 ${
                       index <= currentStep / 2 ? 'bg-success text-success-foreground' : 'bg-muted text-muted-foreground'
@@ -164,79 +160,7 @@ const Predict = () => {
               </CardContent>
             </Card>
 
-            {/* File Uploads */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="glass-card animate-slide-in">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Map className="h-5 w-5 text-info" />
-                    <span>Digital Elevation Model</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors">
-                    <Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                    <input
-                      type="file"
-                      accept=".dem,.tif,.tiff"
-                      onChange={(e) => handleFileChange("demFile", e.target.files?.[0] || null)}
-                      className="hidden"
-                      id="dem-upload"
-                      required
-                    />
-                    <label htmlFor="dem-upload" className="cursor-pointer">
-                      <Button type="button" variant="outline" className="mb-2">
-                        Upload DEM File
-                      </Button>
-                      <p className="text-sm text-muted-foreground">
-                        Supported: .dem, .tif, .tiff
-                      </p>
-                    </label>
-                    {formData.demFile && (
-                      <Badge variant="outline" className="mt-2">
-                        {formData.demFile.name}
-                      </Badge>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="glass-card animate-slide-in" style={{ animationDelay: "0.1s" }}>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <FileImage className="h-5 w-5 text-success" />
-                    <span>Drone Imagery</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors">
-                    <Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                    <input
-                      type="file"
-                      accept="image/*"
-                      multiple
-                      onChange={(e) => handleFileChange("droneImages", e.target.files)}
-                      className="hidden"
-                      id="drone-upload"
-                      required
-                    />
-                    <label htmlFor="drone-upload" className="cursor-pointer">
-                      <Button type="button" variant="outline" className="mb-2">
-                        Upload Drone Images
-                      </Button>
-                      <p className="text-sm text-muted-foreground">
-                        Multiple images supported
-                      </p>
-                    </label>
-                    {formData.droneImages && formData.droneImages.length > 0 && (
-                      <Badge variant="outline" className="mt-2">
-                        {formData.droneImages.length} images selected
-                      </Badge>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            {/* File Uploads removed per request */}
 
             {/* Environmental Data */}
             <Card className="glass-card animate-fade-in" style={{ animationDelay: "0.2s" }}>

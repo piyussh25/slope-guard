@@ -141,55 +141,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-20 bg-card/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              How it works
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              A simple three‑step flow from data to decisions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Collect data",
-                description: "Bring in DEMs, drone imagery, sensor feeds, and weather.",
-                icon: Eye
-              },
-              {
-                step: "02", 
-                title: "Analyze",
-                description: "We process the inputs to spot patterns that often come before failure.",
-                icon: Brain
-              },
-              {
-                step: "03",
-                title: "Flag risk",
-                description: "Show risk maps, simple scores, and alerts your team can act on.",
-                icon: Shield
-              }
-            ].map((item, index) => (
-              <div key={index} className="text-center animate-slide-in" style={{ animationDelay: `${index * 0.3}s` }}>
-                <div className="relative mb-8">
-                  <div className="w-20 h-20 mx-auto gradient-primary rounded-full flex items-center justify-center">
-                    <item.icon className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-sm font-bold text-accent-foreground">
-                    {item.step}
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* How It Works Section removed per request */}
 
       {/* CTA Section */}
       <section className="py-20">

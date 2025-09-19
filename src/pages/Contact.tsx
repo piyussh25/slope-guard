@@ -80,8 +80,8 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       details: [
-        "rockguard@nirm.gov.in",
-        "support@rockguard-ai.in"
+        "contact@coderockers.in",
+        "support@coderockers.in"
       ],
       color: "text-success"
     },
@@ -115,7 +115,7 @@ const Contact = () => {
     },
     {
       title: "Technical Support",
-      description: "Get help with RockGuard AI system and implementation",
+      description: "Get help with CodeROCKERS setup and usage",
       action: "Contact Support",
       urgent: false,
       icon: MessageCircle
@@ -139,8 +139,7 @@ const Contact = () => {
             <span className="gradient-primary bg-clip-text text-transparent"> Touch</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Connect with our team for technical support, partnership opportunities, 
-            or to learn more about our AI-powered rockfall prediction system.
+            Reach out for support, partnerships, or to learn more about CodeROCKERS.
           </p>
         </div>
 

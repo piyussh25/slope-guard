@@ -40,7 +40,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Mountain className="h-8 w-8 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-foreground">RockGuard AI</h1>
+                <h1 className="text-xl font-bold text-foreground">CodeROCKERS</h1>
                 <p className="text-xs text-muted-foreground">NIRM - Ministry of Mines</p>
               </div>
             </div>
@@ -102,53 +102,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {/* Footer */}
       <footer className="bg-card border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="gradient-primary p-2 rounded-lg">
-                  <Mountain className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground">RockGuard AI</h3>
-                  <p className="text-sm text-muted-foreground">Smart Mining Safety</p>
-                </div>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                AI-powered rockfall prediction system for open-pit mines, 
-                ensuring safer mining operations through advanced analytics.
-              </p>
+          <div className="flex items-center justify-center space-x-3">
+            <div className="gradient-primary p-2 rounded-lg">
+              <Mountain className="h-6 w-6 text-primary-foreground" />
             </div>
-            
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Organization</h4>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <p>Ministry of Mines</p>
-                <p>National Institute of Rock Mechanics (NIRM)</p>
-                <p>Smart India Hackathon 2025</p>
-                <p>Problem ID: SIH25071</p>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
-              <div className="grid grid-cols-2 gap-2">
-                {navigation.map((item) => (
-                  <Link 
-                    key={item.name} 
-                    to={item.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-8 pt-8 border-t border-border text-center">
-            <p className="text-sm text-muted-foreground">
-              © 2025 RockGuard AI. Developed for Smart India Hackathon 2025. All rights reserved.
-            </p>
+            <h3 className="font-bold text-foreground">CodeROCKERS</h3>
           </div>
         </div>
       </footer>

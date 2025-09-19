@@ -16,54 +16,12 @@ import {
 
 const Team = () => {
   const teamMembers = [
-    {
-      name: "Piyush",
-      role: "Team Leader",
-      expertise: "Machine Learning, Computer Vision",
-      description: "Specializes in developing AI models for predictive analysis and computer vision applications in mining safety.",
-      icon: Brain,
-      color: "text-primary"
-    },
-    {
-      name: "Agrim Rai", 
-      role: "Backend Developer",
-      expertise: "System Architecture, APIs",
-      description: "Expert in building scalable backend systems and real-time data processing pipelines for mining operations.",
-      icon: Database,
-      color: "text-info"
-    },
-    {
-      name: "Akash verma",
-      role: "Full Stack Developer", 
-      expertise: "React, Node.js, DevOps",
-      description: "Focuses on creating responsive web applications and managing cloud infrastructure for mining safety systems.",
-      icon: Code,
-      color: "text-success"
-    },
-    {
-      name: "Roshni khatri",
-      role: "Data Scientist",
-      expertise: "Data Analysis, Geotechnical Modeling",
-      description: "Specializes in analyzing geological and sensor data to improve rockfall prediction accuracy.",
-      icon: Star,
-      color: "text-warning"
-    },
-    {
-      name: "Aikansh ",
-      role: "Frontend Developer",
-      expertise: "UI/UX, React, Animations",
-      description: "Creates intuitive user interfaces and engaging visual experiences for mining safety dashboards.",
-      icon: Palette,
-      color: "text-accent"
-    },
-    {
-      name: "Mohit Sharma",
-      role: "Security Engineer",
-      expertise: "Cybersecurity, Safety Protocols", 
-      description: "Ensures the security and reliability of mining safety systems and data protection protocols.",
-      icon: Shield,
-      color: "text-destructive"
-    }
+    { name: "Piyush", role: "Team Leader", icon: Brain, color: "text-primary" },
+    { name: "Agrim Rai", role: "Backend Developer", icon: Database, color: "text-info" },
+    { name: "Akash Verma", role: "Full Stack Developer", icon: Code, color: "text-success" },
+    { name: "Roshni Khatri", role: "Data Scientist", icon: Star, color: "text-warning" },
+    { name: "Aikansh", role: "Frontend Developer", icon: Palette, color: "text-accent" },
+    { name: "Mohit Sharma", role: "Security Engineer", icon: Shield, color: "text-destructive" }
   ];
 
   const achievements = [
@@ -107,14 +65,10 @@ const Team = () => {
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2">{member.name}</h3>
                   <p className="text-primary font-medium mb-2">{member.role}</p>
-                  <Badge variant="outline" className="mb-4">
-                    {member.expertise}
-                  </Badge>
+                  {/* Expertise removed per request */}
                 </div>
                 
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  {member.description}
-                </p>
+                {/* Description removed per request */}
                 
                 <div className="flex justify-center space-x-2">
                   <Button variant="outline" size="sm">
@@ -155,12 +109,7 @@ const Team = () => {
         {/* Mission Statement */}
         <Card className="glass-card gradient-primary animate-fade-in" style={{ animationDelay: "1s" }}>
           <CardContent className="p-12 text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground mb-6">
-              What drives us
-            </h2>
-            <p className="text-xl text-primary-foreground/90 leading-relaxed max-w-4xl mx-auto mb-8">
-              We want fewer close calls on site. If our tools help you notice a change a day earlier, that’s a win.
-            </p>
+            {/* Mission section left as-is or can be removed if needed */}
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               {[
