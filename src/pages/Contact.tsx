@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,14 +27,35 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
 
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitting(false);
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Email service not configured");
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          organization: formData.organization,
+          inquiry_type: formData.inquiryType,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "workwithpiyushofficial@gmail.com"
+        },
+        { publicKey }
+      );
+
       toast({
-        title: "Message Sent Successfully!",
-        description: "We'll get back to you within 24 hours.",
+        title: "Message sent",
+        description: "Thanks! We'll reply soon.",
       });
+
       setFormData({
         name: "",
         email: "",
@@ -42,7 +64,14 @@ const Contact = () => {
         message: "",
         inquiryType: "general"
       });
-    }, 2000);
+    } catch (err) {
+      toast({
+        title: "Couldn’t send message",
+        description: "Please try again in a minute or email us directly.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inquiryTypes = [
