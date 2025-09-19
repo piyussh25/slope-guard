@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { 
   Upload, 
   MapPin, 
@@ -37,6 +38,14 @@ const Predict = () => {
     strain: "",
     porePressure: ""
   });
+
+  const mineSites = [
+    { value: "jharia-sector-7a", label: "Jharia Coalfield – Sector 7-A" },
+    { value: "singareni-block-3c", label: "Singareni Collieries – Block 3-C" },
+    { value: "korba-zone-2b", label: "Korba Coalfield – Zone 2-B" },
+    { value: "raniganj-area-1a", label: "Raniganj Coalfield – Area 1-A" },
+    { value: "talcher-sector-8e", label: "Talcher Coalfield – Sector 8-E" }
+  ];
 
   const handleFileChange = (field: string, files: FileList | File | null) => {
     setFormData(prev => ({ ...prev, [field]: files }));
@@ -153,7 +162,8 @@ const Predict = () => {
           </Card>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Location Info */}
+            {/* Location Info */
+            }
             <Card className="glass-card animate-fade-in">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
@@ -164,14 +174,22 @@ const Predict = () => {
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="location">Site Location/Coordinates</Label>
-                    <Input
-                      id="location"
-                      placeholder="e.g., Jharia Coalfield, Lat: 23.7644, Long: 86.4106"
+                    <Label htmlFor="location">Select a Mine Site</Label>
+                    <Select
                       value={formData.location}
-                      onChange={(e) => handleInputChange("location", e.target.value)}
-                      required
-                    />
+                      onValueChange={(val) => handleInputChange("location", val)}
+                    >
+                      <SelectTrigger id="location" className="w-full">
+                        <SelectValue placeholder="Choose a site" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {mineSites.map((site) => (
+                          <SelectItem key={site.value} value={site.value}>
+                            {site.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
               </CardContent>
