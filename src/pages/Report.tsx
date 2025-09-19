@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -26,15 +26,16 @@ import {
 
 const Report = () => {
   const { reportId } = useParams();
+  const locationState = useLocation().state as { riskScore?: number; overallRisk?: string; location?: string } | null;
 
   // Mock report data - in real app this would come from API
   const report = {
     id: reportId,
-    location: "Jharia Coalfield, Sector 7-A",
+    location: locationState?.location || "Jharia Coalfield, Sector 7-A",
     coordinates: "23.7644°N, 86.4106°E",
     analysisDate: new Date().toISOString(),
-    overallRisk: "MODERATE",
-    riskScore: 68,
+    overallRisk: locationState?.overallRisk || "MODERATE",
+    riskScore: locationState?.riskScore ?? 68,
     confidence: 94,
     timeToEvent: "72-96 hours",
     factors: {
@@ -182,6 +183,24 @@ const Report = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Analysis */}
           <div className="lg:col-span-2 space-y-6">
+            {/* Risk Map Preview */}
+            <Card className="glass-card animate-fade-in">
+              <CardHeader>
+                <CardTitle>Risk Map Preview</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-64 rounded-lg bg-gradient-to-br from-destructive/20 via-warning/20 to-success/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-sm text-muted-foreground mb-2">Heatmap placeholder</div>
+                    <div className="flex items-center justify-center space-x-2">
+                      <Badge className="bg-destructive/20 text-destructive border-destructive/30">High</Badge>
+                      <Badge className="bg-warning/20 text-warning border-warning/30">Moderate</Badge>
+                      <Badge className="bg-success/20 text-success border-success/30">Low</Badge>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
             {/* Location Info */}
             <Card className="glass-card animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <CardHeader>
@@ -259,6 +278,26 @@ const Report = () => {
 
           {/* Sidebar */}
           <div className="space-y-6">
+            {/* Alert Settings */}
+            <Card className="glass-card animate-slide-in">
+              <CardHeader>
+                <CardTitle>Alert Settings</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">Email Alerts</span>
+                  <input type="checkbox" defaultChecked className="h-4 w-4" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">SMS Alerts</span>
+                  <input type="checkbox" className="h-4 w-4" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">Threshold (%)</span>
+                  <input type="number" defaultValue={70} className="w-20 px-2 py-1 rounded-md border border-border bg-background text-foreground text-sm" />
+                </div>
+              </CardContent>
+            </Card>
             {/* Alerts */}
             <Card className="glass-card animate-slide-in" style={{ animationDelay: "0.7s" }}>
               <CardHeader>

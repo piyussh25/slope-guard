@@ -66,13 +66,30 @@ const Predict = () => {
     setTimeout(() => {
       setLoading(false);
       const reportId = `RPT-${Date.now()}`;
-      
+
+      // Simple mock scoring based on inputs
+      const base = 40;
+      const temp = Number(formData.temperature || 0);
+      const rain = Number(formData.rainfall || 0);
+      const vib = Number(formData.vibrations || 0);
+      const disp = Number(formData.displacement || 0);
+      const strain = Number(formData.strain || 0);
+      const pore = Number(formData.porePressure || 0);
+      const score = Math.max(0, Math.min(100, Math.round(base + 0.2 * rain + 0.3 * vib + 0.25 * disp + 0.15 * (strain/10) + 0.1 * pore)));
+      const riskLevel = score >= 80 ? "HIGH" : score >= 50 ? "MODERATE" : "LOW";
+
       toast({
         title: "Analysis Complete!",
         description: `Risk assessment report ${reportId} has been generated.`,
       });
 
-      navigate(`/report/${reportId}`);
+      navigate(`/report/${reportId}`, {
+        state: {
+          riskScore: score,
+          overallRisk: riskLevel,
+          location: formData.location,
+        }
+      });
     }, 5000);
   };
 
