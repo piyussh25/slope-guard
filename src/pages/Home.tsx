@@ -19,26 +19,26 @@ const Home = () => {
   const features = [
     {
       icon: Brain,
-      title: "AI-Powered Predictions",
-      description: "Advanced machine learning algorithms analyze multi-source data to predict rockfall risks with high accuracy.",
+      title: "Predictive insights",
+      description: "We combine maps, imagery, and sensor readings to estimate rockfall risk you can act on.",
       color: "text-info"
     },
     {
       icon: Eye,
-      title: "Real-time Monitoring",
-      description: "Continuous monitoring of slope stability using DEM, drone imagery, and geotechnical sensors.",
+      title: "Ongoing monitoring",
+      description: "Watch slope stability over time using DEMs, drone photos, and on‑site instruments.",
       color: "text-success"
     },
     {
       icon: AlertTriangle,
-      title: "Early Warning System",
-      description: "Instant alerts via SMS/email when dangerous conditions are detected, enabling proactive safety measures.",
+      title: "Early warnings",
+      description: "Get alerts when conditions change so teams have time to respond safely.",
       color: "text-warning"
     },
     {
       icon: BarChart3,
-      title: "Risk Analytics",
-      description: "Comprehensive dashboard with risk maps, probability forecasts, and actionable insights.",
+      title: "Clear dashboards",
+      description: "Maps, trends, and simple summaries help you see what matters quickly.",
       color: "text-accent"
     }
   ];
@@ -63,26 +63,24 @@ const Home = () => {
             </Badge>
             
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-              Predicting
-              <span className="gradient-primary bg-clip-text text-transparent"> Rockfall </span>
-              Risks with AI
+              Predict rockfall risk
+              <span className="gradient-primary bg-clip-text text-transparent"> before it happens</span>
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Revolutionary AI-powered system for open-pit mines that analyzes digital elevation models, 
-              drone imagery, and sensor data to predict rockfall incidents before they occur.
+              A practical tool for open‑pit mines. It looks at elevation models, drone imagery, and sensor data to flag areas that may fail.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/predict">
                 <Button size="lg" className="text-lg px-8 py-6 gradient-primary text-primary-foreground">
-                  Start Prediction Analysis
+                  Run a risk check
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/reports">
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                  View Past Reports
+                  View reports
                 </Button>
               </Link>
             </div>
@@ -112,11 +110,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              Advanced Rockfall Detection Technology
+              What you get
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our comprehensive system integrates multiple data sources and cutting-edge AI to provide 
-              the most accurate rockfall predictions in the mining industry.
+              One place to track slope health, spot changes early, and share clear updates with your team.
             </p>
           </div>
 
@@ -149,10 +146,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              How RockGuard AI Works
+              How it works
             </h2>
             <p className="text-xl text-muted-foreground">
-              Our three-step process ensures comprehensive monitoring and accurate predictions
+              A simple three‑step flow from data to decisions.
             </p>
           </div>
 
@@ -160,20 +157,20 @@ const Home = () => {
             {[
               {
                 step: "01",
-                title: "Data Collection",
-                description: "Gather data from multiple sources including DEM, drone imagery, sensors, and environmental factors",
+                title: "Collect data",
+                description: "Bring in DEMs, drone imagery, sensor feeds, and weather.",
                 icon: Eye
               },
               {
                 step: "02", 
-                title: "AI Analysis",
-                description: "Process multi-source data through advanced machine learning models to identify risk patterns",
+                title: "Analyze",
+                description: "We process the inputs to spot patterns that often come before failure.",
                 icon: Brain
               },
               {
                 step: "03",
-                title: "Risk Prediction",
-                description: "Generate real-time risk maps, probability forecasts, and automated alerts for mine safety teams",
+                title: "Flag risk",
+                description: "Show risk maps, simple scores, and alerts your team can act on.",
                 icon: Shield
               }
             ].map((item, index) => (
@@ -199,21 +196,21 @@ const Home = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="gradient-primary p-12 rounded-2xl animate-fade-in">
             <h2 className="text-3xl font-bold text-primary-foreground mb-4">
-              Ready to Enhance Mine Safety?
+              Ready to make your site safer?
             </h2>
             <p className="text-xl text-primary-foreground/90 mb-8">
-              Start using RockGuard AI today and protect your mining operations with predictive intelligence.
+              Try it on a current bench or wall and see if the insights help your daily checks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/predict">
                 <Button variant="secondary" size="lg" className="text-lg px-8 py-6">
-                  Begin Risk Analysis
+                  Start a check
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/contact">
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                  Contact Our Team
+                  Talk to us
                 </Button>
               </Link>
             </div>

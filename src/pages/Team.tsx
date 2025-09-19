@@ -67,10 +67,10 @@ const Team = () => {
   ];
 
   const achievements = [
-    "Smart India Hackathon 2025 Participants",
-    "AI-Powered Mining Safety Innovation",
-    "Real-time Rockfall Prediction System",
-    "Multi-source Data Integration Expertise"
+    "Participating in Smart India Hackathon 2025",
+    "Building practical tools for mining safety",
+    "Focused on real-time rockfall prediction",
+    "Comfortable working across maps, imagery, and sensors"
   ];
 
   return (
@@ -79,12 +79,11 @@ const Team = () => {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Meet Our
-            <span className="gradient-primary bg-clip-text text-transparent"> Expert Team</span>
+            Meet the
+            <span className="gradient-primary bg-clip-text text-transparent"> team</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A diverse group of talented engineers and data scientists working together to revolutionize 
-            mining safety through AI-powered rockfall prediction technology.
+            We’re a small group of engineers and data folks working on straightforward tools to help keep mine sites safer.
           </p>
           
           <div className="flex flex-wrap justify-center gap-3 mt-8">
@@ -157,30 +156,27 @@ const Team = () => {
         <Card className="glass-card gradient-primary animate-fade-in" style={{ animationDelay: "1s" }}>
           <CardContent className="p-12 text-center">
             <h2 className="text-3xl font-bold text-primary-foreground mb-6">
-              Our Mission
+              What drives us
             </h2>
             <p className="text-xl text-primary-foreground/90 leading-relaxed max-w-4xl mx-auto mb-8">
-              We are committed to leveraging cutting-edge artificial intelligence and machine learning 
-              technologies to create safer mining environments. Our goal is to prevent rockfall incidents 
-              through predictive analytics, protecting both human lives and valuable mining equipment 
-              while contributing to the sustainable future of the mining industry.
+              We want fewer close calls on site. If our tools help you notice a change a day earlier, that’s a win.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               {[
                 {
-                  title: "Innovation",
-                  description: "Pushing the boundaries of AI in mining safety",
+                  title: "Practical first",
+                  description: "Useful, reliable features beat buzzwords",
                   icon: Brain
                 },
                 {
                   title: "Safety First", 
-                  description: "Protecting lives through predictive technology",
+                  description: "People and simple workflows come before features",
                   icon: Shield
                 },
                 {
                   title: "Collaboration",
-                  description: "Working together towards common goals",
+                  description: "We listen, iterate, and ship small improvements",
                   icon: User
                 }
               ].map((value, index) => (
